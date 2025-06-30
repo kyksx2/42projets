@@ -1,4 +1,4 @@
-NAME = Fixed
+NAME = BSP
 
 CXX = c++
 
