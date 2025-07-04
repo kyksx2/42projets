@@ -1,6 +1,6 @@
 NAME = philo
 
-CFLAGS = -pthread -Wall -Werror -Wextra -fsanitize=thread -g3
+CFLAGS = -pthread -Wall -Werror -Wextra -g3
 
 SRC =	main.c \
 		init.c \
