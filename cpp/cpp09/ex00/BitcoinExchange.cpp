@@ -6,7 +6,7 @@
 /*   By: kjolly <kjolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 12:29:45 by kjolly            #+#    #+#             */
-/*   Updated: 2025/09/08 12:29:39 by kjolly           ###   ########.fr       */
+/*   Updated: 2025/09/08 16:56:49 by kjolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ bool checkContent(std::string date, std::string value) {
                 return false;            
         }
         else {
-            if (!isalnum(date[i]))
+            if (!isdigit(date[i]))
                 return false;
         }
     }
