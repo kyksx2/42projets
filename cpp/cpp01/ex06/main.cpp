@@ -6,7 +6,7 @@
 /*   By: kjolly <kjolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 04:55:06 by kjolly            #+#    #+#             */
-/*   Updated: 2025/06/27 05:01:41 by kjolly           ###   ########.fr       */
+/*   Updated: 2025/07/07 10:49:09 by kjolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@ bool isallupper(std::string av) {
     for (size_t i = 0; i < av.length(); i++) {
         if (!std::isupper(static_cast<unsigned char>(av[i])))
             return false;
+    }
+    if (av != "ERROR" && av != "DEBUG" && av != "INFO" && av != "WARNING") {
+        return false;
     }
     return true;
 }

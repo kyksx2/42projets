@@ -6,26 +6,20 @@
 /*   By: kjolly <kjolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 04:55:26 by kjolly            #+#    #+#             */
-/*   Updated: 2025/06/27 05:13:36 by kjolly           ###   ########.fr       */
+/*   Updated: 2025/07/28 11:26:40 by kjolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-void Harl::complain(std::string level) {
-  int index = 0;
-  if (level == "DEBUG")
-    index = 0;
-  else if (level == "INFO")
-    index = 1;
-  else if (level == "WARNING")
-    index = 2;
-  else if (level == "ERROR")
-    index = 3;
-  else {
-    std::cout << "Error: level not found\n";
-    return ;
-  };
+void Harl::complain(std::string level){
+  int index;
+  std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+  for (int i = 0; i < 4; i++) {
+    if (level == levels[i]) {
+        index = i;
+      }
+  }
 
   switch (index) {
   case 0:
