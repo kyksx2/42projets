@@ -6,7 +6,7 @@
 /*   By: kjolly <kjolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 12:32:54 by kjolly            #+#    #+#             */
-/*   Updated: 2025/09/08 17:12:23 by kjolly           ###   ########.fr       */
+/*   Updated: 2025/09/09 10:12:46 by kjolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 #include <stack>
 #include <algorithm>
 
-
+bool goodInput(char &c);
+bool parsArg(int ac, char *av);
+bool isOperator(std::string token);
 
 #endif
