@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kjolly <kjolly@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 10:15:41 by kjolly            #+#    #+#             */
-/*   Updated: 2025/09/09 12:46:53 by kjolly           ###   ########.fr       */
+/*   Updated: 2025/09/10 18:15:47 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,23 @@ int main(int ac, char **av) {
             v1.push_back(n);
             l1.push_back(n);
     }
+    std::cout << "Before:  ";
+    for(size_t i = 0; i < v1.size(); i++)
+        std::cout << v1[i] << " ";
+    std::cout << std::endl;
+    const std::clock_t V_start = std::clock();
+    fordJohnsonSort(v1);
+    const std::clock_t V_end = std::clock();
+    const std::clock_t L_start = std::clock();
+    fordJohnsonSort(l1);
+    const std::clock_t L_end = std::clock();
+    std::cout << "After:  ";
+    for(size_t i = 0; i < v1.size(); i++)
+        std::cout << v1[i] << " ";
+    std::cout << std::endl;
+    std::cout << "Time to process a range of " << ac - 1 << " elements with std::vector : "
+            << V_end - V_start / CLOCKS_PER_SEC << "ms" << std::endl;
+    std::cout << "Time to process a range of " << ac - 1 << " elements with std::list : "
+            << L_end - L_start / CLOCKS_PER_SEC << "ms" << std::endl;
+    return (0);
 }
