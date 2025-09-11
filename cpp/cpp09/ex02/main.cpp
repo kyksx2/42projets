@@ -3,22 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kjolly <kjolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 10:15:41 by kjolly            #+#    #+#             */
-/*   Updated: 2025/09/10 18:15:47 by marvin           ###   ########.fr       */
+/*   Updated: 2025/09/11 10:02:28 by kjolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
-
-bool checkArg(char **av) {
-    for (int i = 0; av[i]; i++)
-        for (int j = 0; av[i][j]; j++)
-            if (!isdigit(av[i][j]) && av[i][j] != ' ')
-                return false;
-    return true;
-}
 
 int main(int ac, char **av) {
     if (ac < 2 || !checkArg(&av[1])) {

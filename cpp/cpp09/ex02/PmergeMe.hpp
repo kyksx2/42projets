@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kjolly <kjolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 10:15:17 by kjolly            #+#    #+#             */
-/*   Updated: 2025/09/10 18:03:03 by marvin           ###   ########.fr       */
+/*   Updated: 2025/09/11 19:09:52 by kjolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 #include <vector>
 #include <list>
 #include <ctime>
+
+bool checkArg(char **av);
+std::vector<int> jacobsthalSuite(int size);
 
 template <typename T>
 void fordJohnsonSort(T& v) {
@@ -48,13 +51,14 @@ void fordJohnsonSort(T& v) {
         i++;
     }
     fordJohnsonSort(big);
-    for (typename T::iterator i = small.begin(); i != small.end(); i++) {
-        typename T::value_type elem = *i;
-        typename T::iterator it = big.begin();
-        while (it != big.end() && *it < elem)
-            it++;
-        big.insert(it, elem);
-    }
+    std::vector<int> jacobsthal = jacobsthalSuite(small.size());
+    // for (typename T::iterator i = small.begin(); i != small.end(); i++) {
+    //     typename T::value_type elem = *i;
+    //     typename T::iterator it = big.begin();
+    //     while (it != big.end() && *it < elem)
+    //         it++;
+    //     big.insert(it, elem);
+    // }
     v = big;
 }
 

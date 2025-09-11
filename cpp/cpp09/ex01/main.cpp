@@ -6,7 +6,7 @@
 /*   By: kjolly <kjolly@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 12:33:12 by kjolly            #+#    #+#             */
-/*   Updated: 2025/09/09 11:34:20 by kjolly           ###   ########.fr       */
+/*   Updated: 2025/09/11 11:06:52 by kjolly           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,12 @@ int main(int ac, char **av) {
     if (!parsArg(ac, av[1]))
         return 1;
     std::string expr = av[1];
-    if (expr.empty()) {
+    if (expr.empty() || onlySpace(expr)) {
         std::cerr << "Error: emplty line." << std::endl;
         return (1);
     }
     std::istringstream iss(expr);
     std::string token;
-    if (!(iss >> token)) {
-        std::cerr << "Erreur: empty line." << std::endl;
-        return 1;
-    }
     std::stack<int> s1;
 
     int a = 0;
