@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 10:15:41 by kjolly            #+#    #+#             */
-/*   Updated: 2025/09/12 11:09:46 by marvin           ###   ########.fr       */
+/*   Updated: 2025/09/12 17:05:06 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,11 @@ int main(int ac, char **av) {
     std::vector<int> v1;
     std::list<int> l1;
     for (size_t i = 1; av[i]; i++) {
-            int n = atoi(av[i]);
+            long n = atol(av[i]);
+            if (n > 2147483647) {
+                std::cout << "Error: overflow detected" << std::endl;
+                return (1);
+            }
             v1.push_back(n);
             l1.push_back(n);
     }
