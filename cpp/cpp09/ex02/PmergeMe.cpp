@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kjolly <kjolly@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 10:15:37 by kjolly            #+#    #+#             */
-/*   Updated: 2025/09/11 20:32:05 by kjolly           ###   ########.fr       */
+/*   Updated: 2025/09/12 10:46:43 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ std::vector<int> jacobsthalSuite(int size) {
         j0 = j1;
         j1 = j2;
     }
-    for (size_t i = size; i >= 1; i--) {
+    for (int i = size; i >= 1; i--) {
         bool find = false;
         for (size_t k = 0; k < j.size(); k++) {
             if (j[k] == i) {
@@ -48,5 +48,7 @@ std::vector<int> jacobsthalSuite(int size) {
         if (!find)
             j.push_back(i);
     }
+    for (std::vector<int>::iterator it = j.begin(); it != j.end(); it++)
+        --(*it);
     return j;
 }
